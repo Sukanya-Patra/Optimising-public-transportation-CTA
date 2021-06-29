@@ -4,8 +4,7 @@ In this project, you will construct a streaming event pipeline around Apache Kaf
 
 When the project is complete, you will be able to monitor a website to watch trains move from station to station.
 
-![Final User Interface](images/ui.png)
-
+![Final User Interface](CTA-Status.gif)
 
 ## Prerequisites
 
@@ -21,7 +20,7 @@ The Chicago Transit Authority (CTA) has asked us to develop a dashboard displayi
 
 Our architecture will look like so:
 
-![Project Architecture](images/diagram.png)
+![Project Architecture](final_architecture.png)
 
 ### Step 1: Create Kafka Producers
 The first step in our plan is to configure the train stations to emit some of the events that we need. The CTA has placed a sensor on each side of every train station that can be programmed to take an action whenever a train arrives at the station.
