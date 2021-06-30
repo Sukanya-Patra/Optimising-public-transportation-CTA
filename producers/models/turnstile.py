@@ -39,16 +39,14 @@ class Turnstile(Producer):
         logger.debug("turnstile run function working")
         num_entries = self.turnstile_hardware.get_entries(timestamp, time_step)
 
-        self.producer.produce(  
-            topic=self.topic_name,
-            key={"timestamp": self.time_millis()},
-            value={
-                "station_id": self.station.station_id,
-                "station_name": self.station.name,
-                "line": self.station.color.name,
-                "entries": num_entries
-            }
-        )
+        for _ in range(num_entries):
+            self.produer.produce(topic=self.topic_name,
+                key={"timestamp": self.time_millis()},
+                value={
+                    "station_id": self.station.station_id,
+                    "station_name": self.station.name,
+                    "line": self.station.color.name
+                })
 
 
 
